@@ -25,7 +25,7 @@ async def receive_order(request: Request):
 
     airtable_payload = {
         "fields": {
-            "Names": formatted_names,
+            "Notes": formatted_names,
             "Order ID": data.get("orderNumber", "Unknown")
         }
     }
