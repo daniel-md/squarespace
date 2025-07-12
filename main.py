@@ -40,4 +40,9 @@ async def receive_order(request: Request):
     async with httpx.AsyncClient() as client:
         response = await client.post(airtable_url, headers=headers, json=airtable_payload)
 
-    return {"status": "success", "airtable_response": response.status_code}
+    return {
+    "status": "sending",
+    "payload": airtable_payload,
+    "airtable_response": response.status_code,
+    "airtable_text": response.text
+}
